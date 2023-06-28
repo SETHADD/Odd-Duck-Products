@@ -1,4 +1,4 @@
-+'use strict'
+'use strict'
 console.log(`Oh I work`)
 
 function generate(){
@@ -16,7 +16,7 @@ const results = document.querySelector(`section+div`)
 const maxClicks = 25
 let clicks= 0
 
-allImages = [];
+let allImages = [];
 
 
 
@@ -31,7 +31,9 @@ function renderImages() {
       image2 = generate();
       image3 = generate();
     }
-  
+//    renderImages();
+
+   
     // now we have two random numbers lets set the attributes of our images in the document.
     img1.src = allImages[image1].imagePath;
     img2.src = allImages[image2].imagePath;
@@ -84,7 +86,7 @@ renderResults();
 
 
 
-// let productName = [`bag`,`bannana`,`bathroom`,`boots`,`breakdfast`,`bubblegum`,`chair`,`cthulhu`,`dog-duck`,`dragon`,`pen`,`pet-sweep`, `scissors`,`shark`,`sweep`,`tauntaun`,`unicorn`,`water-can`,`wine-glass`]
+
 
 
 function Products(name,imagePath){
@@ -97,35 +99,36 @@ function Products(name,imagePath){
 
 
 
+let productName = [`bag`,`banana`,`bathroom`,`boots`,`breakfast`,`bubblegum`,`chair`,`cthulhu`,`dog-duck`,`dragon`,`pen`,`pet-sweep`, `scissors`,`shark`,`sweep`,`tauntaun`,`unicorn`,`water-can`,`wine-glass`]
 
-// function instance(){
-//     let instances
-// for(let i = 0; i< productName.length; i++){
-//     instances = new Products(productName[i], `images/${productName[i]}.jpg`);
-// } return instances;
-// }
+for(let i = 0; i< productName.length; i++){
+    new Products(productName[i], `images/${productName[i]}.jpg`);
+}
 
 
 
 
-const bag = new Products("bag", "images/bag.jpg")
-const banana = new Products("banana","images/banana.jpg")
-const bathroom = new Products("bathroom", "images/bathroom.jpg")
-const boots = new Products("boots","images/boots.jpg")
-const breakfast = new Products("breakfast", "images/breakfast.jpg")
-const bubblegum = new Products("bubblegum","images/bubblegum.jpg")
-const chair = new Products("chair","images/chair.jpg")
-const cthulhu = new Products("cthulhu", "images/cthulhu.jpg")
-const dogduck = new Products ("dog-duck","images/dog-duck.jpg")
-const dragon = new Products("dragon","images/dragon.jpg")
-const pen = new Products("pen","images/pen.jpg")
-const petsweep = new Products("pet-sweep","images/pet-sweep.jpg")
-const scissors = new Products("scissors","images/scissors.jpg")
-const shark = new Products("shark","images/shark.jpg")
-const sweep = new Products("sweep","images/sweep.png")
-const tauntaun = new Products("tauntaun","images/tauntaun.jpg")
-const unicorn = new Products("unicorn", "images/unicorn.jpg")
-const watercan = new Products("water-can","images/water-can.jpg")
-const wineglass = new Products("wine-glass","images/wine-glass.jpg")
+
+// const bag = new Products("bag", "images/bag.jpg")
+// const banana = new Products("banana","images/banana.jpg")
+// const bathroom = new Products("bathroom", "images/bathroom.jpg")
+// const boots = new Products("boots","images/boots.jpg")
+// const breakfast = new Products("breakfast", "images/breakfast.jpg")
+// const bubblegum = new Products("bubblegum","images/bubblegum.jpg")
+// const chair = new Products("chair","images/chair.jpg")
+// const cthulhu = new Products("cthulhu", "images/cthulhu.jpg")
+// const dogduck = new Products ("dog-duck","images/dog-duck.jpg")
+// const dragon = new Products("dragon","images/dragon.jpg")
+// const pen = new Products("pen","images/pen.jpg")
+// const petsweep = new Products("pet-sweep","images/pet-sweep.jpg")
+// const scissors = new Products("scissors","images/scissors.jpg")
+// const shark = new Products("shark","images/shark.jpg")
+// const sweep = new Products("sweep","images/sweep.png")
+// const tauntaun = new Products("tauntaun","images/tauntaun.jpg")
+// const unicorn = new Products("unicorn", "images/unicorn.jpg")
+// const watercan = new Products("water-can","images/water-can.jpg")
+// const wineglass = new Products("wine-glass","images/wine-glass.jpg")
+
+renderImages()
 
 mainSection.addEventListener("click", imagesClickedOn);

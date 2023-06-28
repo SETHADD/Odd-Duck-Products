@@ -1,0 +1,17 @@
+div {
+    border: 1px solid black;
+    background-color: cyan;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+div:hover{
+    cursor: pointer;
+    color: aliceblue;
+    background-color: black;
+}
+
+img{
+    max-width: 400PX;
+    max-height: 400PX;
+}
