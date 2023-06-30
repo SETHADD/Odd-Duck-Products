@@ -22,7 +22,7 @@ let allImages = [];
 
 
 function renderImages() {
-    // we need to generate a number to reference the goat we want to render onto the page
+    // we need to generate a number to reference the image we want to render onto the page
     let image1 = generate();
     let image2 = generate();
     let image3 = generate();
@@ -101,9 +101,9 @@ function Products(name,imagePath){
 
 let productName = [`bag`,`banana`,`bathroom`,`boots`,`breakfast`,`bubblegum`,`chair`,`cthulhu`,`dog-duck`,`dragon`,`pen`,`pet-sweep`, `scissors`,`shark`,`sweep`,`tauntaun`,`unicorn`,`water-can`,`wine-glass`]
 
-for(let i = 0; i< productName.length; i++){
-    new Products(productName[i], `images/${productName[i]}.jpg`);
-}
+// for(let i = 0; i< productName.length; i++){
+//     new Products(productName[i], `images/${productName[i]}.jpg`);
+// }
 
 
 
@@ -129,7 +129,7 @@ for(let i = 0; i< productName.length; i++){
 // const watercan = new Products("water-can","images/water-can.jpg")
 // const wineglass = new Products("wine-glass","images/wine-glass.jpg")
 
-renderImages()
+// renderImages()
 
 mainSection.addEventListener("click", imagesClickedOn);
 
@@ -182,5 +182,31 @@ const config = {
 
 const duckChart = document.getElementById("myChart")
 const newChart = new Chart(duckChart,config)
+
+setStorage();
 }
+
+function setStorage(){
+    localStorage.setItem('votes',JSON.stringify(allImages))
+}
+
+function getStorage(){
+
+    const retrieveStorage = JSON.parse(localStorage.getItem("votes"))
+
+    if(retrieveStorage){
+        allImages = retrieveStorage       
+    }
+    else{
+        for(let i = 0; i< productName.length; i++){
+            new Products(productName[i], `images/${productName[i]}.jpg`);
+        }
+    }
+
+    console.log(retrieveStorage)
+
+}
+
+getStorage();
+renderImages();
 
