@@ -1,17 +1,77 @@
-div {
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    width: 900px;
+    line-height: 5pc;
+    background-color: bisque;
+}
+
+.divPicture {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+section img:hover {
+    border: 5px solid rgb(22, 184, 124);
+    cursor: pointer;
+  }
+  
+
+img{
+    max-width: 200PX;
+    max-height: 200PX;
+}
+
+section + div {
+    visibility: hidden;
+}
+
+section + div.clicks-allowed {
+    visibility: visible;
     border: 1px solid black;
     background-color: cyan;
     text-align: center;
     margin-top: 1rem;
 }
 
-div:hover{
-    cursor: pointer;
-    color: aliceblue;
-    background-color: black;
+header:nth-last-child() {
+    display: flex;
+    justify-content: center;
+
 }
 
-img{
-    max-width: 400PX;
-    max-height: 400PX;
+div img{
+    width: 5rem;
+    height: 5rem;
 }
+
+header{
+    display: inline;
+    text-align: center;
+    background-color: rgb(42, 165, 140);
+    /* margin-bottom: 10rem; */
+}
+
+h1 {
+    font-weight: 800;
+    font-size:xx-large;
+}
+
+canvas {
+    width: 70%;
+    height: 500px;
+  }
+
+
+  footer{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(12, 232, 151);
+  }
+

@@ -65,7 +65,7 @@ function imagesClickedOn(event){
     if (clicks === maxClicks){
         mainSection.removeEventListener("click", imagesClickedOn);
         mainSection.className = "no-voting";
-        results.addEventListener("click", renderResults);
+        results.addEventListener("click", chartDetails);
         results.className = "clicks-allowed"
     } else {
     renderImages();
@@ -82,7 +82,7 @@ function renderResults(){
     }
 };
 
-renderResults();
+// renderResults();
 
 
 
@@ -132,3 +132,55 @@ for(let i = 0; i< productName.length; i++){
 renderImages()
 
 mainSection.addEventListener("click", imagesClickedOn);
+
+let chartName = []
+let chartView = []
+let chartClick = []
+
+function chartDetails(){
+    
+
+
+    for(let i = 0; i< allImages.length;i++){
+        chartName.push(allImages[i].name)
+        chartView.push(allImages[i].views)
+        chartClick.push(allImages[i].clicks)
+    
+} 
+console.log(chartName)
+console.log(chartClick)
+console.log(chartView)
+
+
+
+const data = {
+    labels: chartName,
+
+    datasets: [{
+        label: "Clicks",
+        data: chartClick,
+        backgroundColor: `tomato`,
+        borderWidth: 1,
+        borderColor: `blue`
+        },
+        {
+            label: "Views",
+            data: chartView,
+            backgroundColor: `black`,
+            borderWidth: 1,
+            borderColor: `red`
+        }
+
+]
+}
+
+const config = {
+    type: "bar",
+    data: data
+}
+
+
+const duckChart = document.getElementById("myChart")
+const newChart = new Chart(duckChart,config)
+}
+
